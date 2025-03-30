@@ -11,12 +11,9 @@ import java.util.List;
 
 @Repository
 public class DeptDaoImpl implements DeptDao {
-
     @Override
-    public List<String> findAll(){
+    public List<String> findAll() {
         InputStream in = this.getClass().getClassLoader().getResourceAsStream("dept.txt");
-        ArrayList<String> lines = IoUtil.readLines(in, StandardCharsets.UTF_8, new ArrayList<>());
-        return lines;
+        return IoUtil.readLines(in, StandardCharsets.UTF_8, new ArrayList<>());
     }
-
 }

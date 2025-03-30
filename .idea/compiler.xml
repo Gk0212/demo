@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="17" />
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springboot-ioc-homework" />
+        <module name="spring-web" />
+        <module name="jdbc-demo" />
+      </profile>
+      <profile name="Annotation profile for springboot-mybatis-quickstart" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$PROJECT_DIR$/../../JAVA/develop/apache-maven-3.9.9/repo/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+        </processorPath>
+        <module name="springboot-web-01" />
+        <module name="springboot-mybatis-quickstart" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="17">
+      <module name="springboot-web-01 (1)" target="17" />
+      <module name="springboot-web-01 (2)" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="spring-web" options="-parameters" />
+      <module name="springboot-ioc-homework" options="-parameters" />
+      <module name="springboot-mybatis-quickstart" options="-parameters" />
+      <module name="springboot-web-01" options="-parameters" />
+      <module name="springboot-web-01 (1)" options="-parameters" />
+      <module name="springboot-web-01 (2)" options="-parameters" />
+    </option>
   </component>
 </project>

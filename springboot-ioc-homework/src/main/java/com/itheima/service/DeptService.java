@@ -5,5 +5,5 @@ import com.itheima.pojo.Dept;
 import java.util.List;
 
 public interface DeptService {
-    public List<Dept> findAllDept();
+    public List<Dept> findAll();
 }

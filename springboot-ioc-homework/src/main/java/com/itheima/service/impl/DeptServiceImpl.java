@@ -17,15 +17,13 @@ public class DeptServiceImpl implements DeptService {
     private DeptDao deptDao;
 
     @Override
-    public List<Dept> findAllDept() {
+    public List<Dept> findAll() {
         List<String> lines = deptDao.findAll();
-
-        //2. 对原始数据进行处理 , 组装部门数据
         List<Dept> deptList = lines.stream().map(line -> {
-            String[] parts = line.split(",");
-            Integer id = Integer.parseInt(parts[0]);
-            String name = parts[1];
-            LocalDateTime updateTime = LocalDateTime.parse(parts[2], DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+            String[] split = line.split(",");
+            Integer id = Integer.parseInt(split[0]);
+            String name = split[1];
+            LocalDateTime updateTime = LocalDateTime.parse(split[2], DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
             return new Dept(id, name, updateTime);
         }).toList();
 

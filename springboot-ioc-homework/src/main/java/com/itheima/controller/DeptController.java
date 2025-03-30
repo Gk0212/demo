@@ -1,10 +1,16 @@
 package com.itheima.controller;
 
+import cn.hutool.core.io.IoUtil;
 import com.itheima.pojo.Dept;
+import com.itheima.pojo.Result;
 import com.itheima.service.DeptService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import java.io.InputStream;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -14,9 +20,11 @@ public class DeptController {
     private DeptService deptService;
 
     @RequestMapping("/depts")
-    public List<Dept> list() throws Exception {
-        List<Dept> deptList = deptService.findAllDept();
-        return deptList;
+    public Result list2(){
+        //1. 查询部门数据
+        List<Dept> deptList = deptService.findAll();
+        //2. 响应数据
+        return Result.success(deptList);
     }
 
 }
